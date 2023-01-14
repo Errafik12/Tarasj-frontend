@@ -1,0 +1,29 @@
+<div class="col-md-12">
+    <br>
+    <div id="main" class="col-md-6" style="overflow-x:auto;">
+        <table class="table" style="border: 1px solid;width: 90%;padding: 15px;text-align: left;">
+            <thead>
+                <tr style="text-align: center;">
+                    <th colspan="4">Service Details</th>
+                </tr>
+                <tr>
+                    <th>No #</th>
+                    <th>Event Id</th>
+                    <th>Service Title</th>
+                    <th>Service Description</th>
+                    <th>Service Percentage</th>
+                </tr>
+            </thead>
+            <tbody *ngIf="ServiceDetails && ServiceDetails?.length !=0">
+                <tr *ngFor="let o of ServiceDetails; let i=index">
+                    <td>{{i+1}}</td>
+                    <td>{{o.eventId}}</td>
+                    <td>{{o.title}}</td>
+                    <td>{{o.description}}</td>
+                    <td>{{o.percentage}}</td>
+                </tr>
+            </tbody>
+
+        </table>
+    </div>
+</div>

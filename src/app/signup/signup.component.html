@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="navbar">
+        <div class="navbar-nav">
+            First Name : <input type="text" name="firstName" [(ngModel)]="firstName">
+            User Name : <input type="text" name="username" [(ngModel)]="username">
+            Date Of Birth : <input type="date" name="dateofbirth" [(ngModel)]="dateofbirth">
+            Password : <input type="password" name="password" [(ngModel)]="password">
+            Role:
+            <select [(ngModel)]="role">
+                <option>Select</option>
+                <option *ngFor='let v of _values2'>{{ v }}</option>
+            </select>
+            <br>
+            <p style="color: red;" *ngIf="isSignUp">Failed User creation</p>
+            <p style="color: red;font-size: xx-small;" *ngIf="isSignUp">{{isSignUpMessage}}</p>
+            <button (click)=signUp() class="btn btn-info">
+                Sign Up
+            </button>
+        </div>
+    </div>
+</div>

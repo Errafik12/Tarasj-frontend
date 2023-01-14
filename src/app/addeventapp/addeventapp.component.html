@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="container">
+        <br>
+        <div class="col-md-5">
+            <div class="navbar-nav">
+                <div class="navbar-nav">
+                    Event Id (Max 8) : <input id="searchBy" type="number"
+                        oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                        maxlength="8" (keyup)="searchBy($event)" name="username" [(ngModel)]="Event.eventId">
+                    Event Name : <input type="text" name="password" [(ngModel)]="Event.name">
+                    Event Status : <input type="text" name="password" [(ngModel)]="Event.status">
+                </div>
+                <br>
+                <div class="d-flex justify-content-between">
+                    <div class="navbar-nav">
+                        Address Number : <input type="number" name="number" [(ngModel)]="Event.addressObj.number">
+                        Street : <input type="text" name="password" [(ngModel)]="Event.addressObj.street">
+                        Postal Code : <input type="number" name="password" [(ngModel)]="Event.addressObj.postal_code">
+                        City : <input type="text" name="city" [(ngModel)]="Event.addressObj.city">
+                        Country : <input type="text" name="country" [(ngModel)]="Event.addressObj.country">
+                    </div>
+                    <div class="navbar-nav">
+                        Organization date : <input type="date" name="date" [(ngModel)]="Event.orgObj.date">
+                        Capacity : <input type="number" name="capacity" [(ngModel)]="Event.orgObj.capacity">
+                        Outdoors : <input type="text" name="outdoors" [(ngModel)]="Event.orgObj.outdoors">
+                        Age Limit : <input type="number" name="age_limit" [(ngModel)]="Event.orgObj.age_limit">
+                        Property : <input type="text" name="property" [(ngModel)]="Event.orgObj.property">
+                    </div>
+                </div>
+                <br>
+                <p style="color: green;" *ngIf="isEventCreation">{{isEventMessage}}</p>
+                <p style="color: red;font-size: xx-small;" *ngIf="isEvent ">{{isEventMessage}}</p>
+                <p style="color: green;font-size: xx-small;" *ngIf="isEventUpdate">{{isEventMessage}}</p>
+                <button (click)=updateEvent() class="btn btn-info">
+                    Save Event
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

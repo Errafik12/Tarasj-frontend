@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="container">
+        <br>
+        <div class="col-md-5">
+            <div class="navbar-nav">
+                <div class="navbar-nav">
+                    Event Id : <input id="searchBy" type="number" (keyup)="searchBy($event)" name="eventId"
+                        [(ngModel)]="Service.eventId">
+                    Service Title : <input type="text" name="password" [(ngModel)]="Service.title">
+                    Service Description : <input type="text" name="password" [(ngModel)]="Service.description">
+                    Service Presentage : <input type="text" name="password" [(ngModel)]="Service.percentage">
+                </div>
+                <br>
+                <p style="color: green;" *ngIf="isServiceCreation">{{isServiceMessage}}</p>
+                <p style="color: red;font-size: xx-small;" *ngIf="isService ">{{isServiceMessage}}</p>
+                <p style="color: green;font-size: xx-small;" *ngIf="isServiceUpdate">{{isServiceMessage}}</p>
+                <button (click)=updateService() class="btn btn-info">
+                    Save Service
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

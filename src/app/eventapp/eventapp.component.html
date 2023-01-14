@@ -1,0 +1,89 @@
+<div class="col-md-12">
+    <div id="main" class="col-md-6" style="overflow-x:auto;">
+        <table class="table" style="border: 1px solid;width: 90%;padding: 15px;text-align: left;">
+            <thead>
+                <tr style="text-align: center;">
+                    <th colspan="4">Event Details</th>
+                </tr>
+                <tr>
+                    <th>No #</th>
+                    <th>Event Name</th>
+                    <th>Event Id</th>
+                    <th>Event Status</th>
+                </tr>
+            </thead>
+            <tbody *ngIf="EventDetails && EventDetails?.length !=0">
+                <tr *ngFor="let o of EventDetails; let i=index">
+                    <td>{{i+1}}</td>
+                    <td>{{o.name}}</td>
+                    <td>{{o.eventId}}</td>
+                    <td>{{o.status}}</td>
+                </tr>
+            </tbody>
+
+        </table>
+    </div>
+</div>
+<div class="d-flex justify-content-between">
+    <div class="col-md-5">
+        <table class="table" style="border: 1px solid;width: 90%;padding: 15px;text-align: left;">
+            <thead>
+                <tr style="text-align: center;">
+                    <th colspan="7">Address Details</th>
+                </tr>
+                <tr>
+                    <th>No #</th>
+                    <th>Event Id</th>
+                    <th>Street</th>
+                    <th>Number</th>
+                    <th>Postal Code</th>
+                    <th>City</th>
+                    <th>Country</th>
+                </tr>
+            </thead>
+            <tbody *ngIf="EventDetails && EventDetails?.length !=0">
+                <tr *ngFor="let o of EventDetails; let i=index">
+                    <td>{{i+1}}</td>
+                    <td>{{o.eventId}}</td>
+                    <td>{{o.addressObj.street}}</td>
+                    <td>{{o.addressObj.number}}</td>
+                    <td>{{o.addressObj.postal_code}}</td>
+                    <td>{{o.addressObj.city}}</td>
+                    <td>{{o.addressObj.country}}</td>
+                </tr>
+            </tbody>
+
+        </table>
+    </div>
+
+    <div class="col-md-7">
+        <table class="table" style="border: 1px solid;width: 90%;padding: 15px;text-align: left;">
+            <thead>
+                <tr style="text-align: center;">
+                    <th colspan="6">Organization Details</th>
+                </tr>
+                <tr>
+                    <th>No #</th>
+                    <th>Event Id</th>
+                    <th>Event Date</th>
+                    <th>Event Capacity</th>
+                    <th>Event Outdoors</th>
+                    <th>Event Age Limit</th>
+                    <th>Event Property</th>
+                </tr>
+            </thead>
+            <tbody *ngIf="EventDetails && EventDetails?.length !=0">
+                <tr *ngFor="let o of EventDetails; let i=index">
+                    <td>{{i+1}}</td>
+                    <td>{{o.eventId}}</td>
+                    <td style="font-size: x-small;">{{o.orgObj.date}}</td>
+                    <td>{{o.orgObj.capacity}}</td>
+                    <td>{{o.orgObj.outdoors}}</td>
+                    <td>{{o.orgObj.age_limit}}</td>
+                    <td>{{o.orgObj.property}}</td>
+                </tr>
+            </tbody>
+
+        </table>
+    </div>
+</div>
