@@ -20,7 +20,7 @@ export class SignupComponent implements OnInit {
   password = ''
   role = ''
 
-  public _values2 = ["user", "organiser", " participants"];
+  public _values2 = ["participant", "admin", " organizer"];
 
   constructor(private router: Router,
     private loginservice: AuthenticationService,

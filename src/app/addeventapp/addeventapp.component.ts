@@ -19,8 +19,7 @@ export class AddeventappComponent implements OnInit {
     date: '',
     capacity: '',
     outdoors: '',
-    age_limit: '',
-    property: ''
+    age_limit: ''
   }
 
   public AddressObj = {
@@ -75,7 +74,7 @@ export class AddeventappComponent implements OnInit {
 
   createEvent() {
     if (this.Event.eventId && this.Event.name && this.Event.status && this.Event.orgObj.date && this.Event.orgObj.capacity
-      && this.Event.orgObj.property && this.Event.addressObj.number && this.Event.addressObj.street && this.Event.addressObj.postal_code
+    && this.Event.addressObj.number && this.Event.addressObj.street && this.Event.addressObj.postal_code
       && this.Event.addressObj.city && this.Event.addressObj.country) {
       const headers = new HttpHeaders()
         .set('Authorization', 'Bearer ' + sessionStorage.getItem('jwttoken'))
@@ -170,7 +169,6 @@ export class AddeventappComponent implements OnInit {
     this.Event.orgObj.date = '';
     this.Event.orgObj.capacity = '';
     this.Event.orgObj.outdoors = '';
-    this.Event.orgObj.property = '';
     this.Event.addressObj.number = '';
     this.Event.addressObj.street = '';
     this.Event.addressObj.postal_code = '';

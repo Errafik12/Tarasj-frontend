@@ -2,12 +2,12 @@
   <nav class="navbar navbar-expand-md navbar-dark bg-dark">
 
     <ul class="navbar-nav">
-      <li><a *ngIf="loginService.isUserLoggedIn()" routerLink="/event" class="nav-link">View Events</a></li>
+      <li><a *ngIf="loginService.isUserLoggedIn()" routerLink="/event" class="nav-link">Events</a></li>
       <li><a *ngIf="loginService.isUserLoggedIn() && !loginService.isUser() && !loginService.isParticipants()"
-          routerLink="/addevent" class="nav-link">Add New Events</a></li>
-      <li><a *ngIf="loginService.isUserLoggedIn()" routerLink="/service" class="nav-link">Service</a></li>
+          routerLink="/addevent" class="nav-link">Create New Event</a></li>
+      <li><a *ngIf="loginService.isUserLoggedIn()" routerLink="/service" class="nav-link">Services</a></li>
       <li><a *ngIf="loginService.isUserLoggedIn() && !loginService.isUser()" routerLink="/addservice"
-          class="nav-link">Add Service</a></li>
+          class="nav-link">Create New Service</a></li>
       <li><a *ngIf="!loginService.isUserLoggedIn()" routerLink="/login" class="nav-link">Login</a></li>
       <li><a *ngIf="!loginService.isUserLoggedIn()" routerLink="/signup" class="nav-link">Sign Up</a></li>
       <li><a *ngIf="loginService.isUserLoggedIn()" routerLink="/logout" class="nav-link">LogOut</a></li>
